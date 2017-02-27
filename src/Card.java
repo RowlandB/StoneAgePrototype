@@ -1,8 +1,21 @@
 
 public abstract class Card
 {
+	public Card()
+	{
+		IO = new System_IO_Object();
+	}
+	
 	abstract void gainCard(Player gainer);
 	abstract void playCard(Player player);
+	
+	public void display()
+	{
+		IO.Output_String(CardText);
+	}
+	
+	private String CardText;
+	private IO_Object IO;
 }
 
 class WorkerCard extends Card

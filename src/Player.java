@@ -1,18 +1,27 @@
 import java.util.Collection;
 
-public class Player
+abstract public class Player
 {
 	Player()
 	{
 		playerBoard = new Board();
 		playerDeck = new PlayerDeck();
 		playerHand = new HandOfCards();
+		numberOfBuys = 2;
 	}
 	
-	public void takeTurn()
+	public void takeTurn(Tableau entireBoard)
 	{
+		playerHand.playAllCards();
 		
+		for(int x=0; x<numberOfBuys; x++)
+		{
+			Card newCard = chooseCardToBuy(entireBoard);
+			newCard.gainCard(this);
+		}
 	}
+	
+	abstract public Card chooseCardToBuy(Tableau entireBoard);
 	
 	public void addCardToDiscard(Card theCard)
 	{
@@ -38,6 +47,13 @@ public class Player
 	
 	class HandOfCards
 	{
+		public void playAllCards()
+		{
+			for(Card EachCard : theHand)
+			{
+				EachCard.playCard(Player.this);
+			}
+		}
 		
 		private Collection<Card> theHand;
 	}
@@ -82,5 +98,6 @@ public class Player
 	private Board playerBoard;
 	private PlayerDeck playerDeck;
 	private HandOfCards playerHand;
+	private Integer numberOfBuys;
 
 }

@@ -5,23 +5,37 @@ public class Game
 
 	public Game()
 	{
+		GameNotOver = true;
 		
 	}
 	
 	
 	public static void main(String[] args)
-	{
-		// TODO Auto-generated method stub
-		
+	{		
 		Game game = new Game();
 		Integer numPlayers = game.GetNumberOfPlayers();
 		
 		for(int x=0; x<numPlayers; x++)
 		{
-			Player newPlayer = new Player();
+			Player newPlayer = new HumanPlayer();
 			game.AddPlayer(newPlayer);
 		}
 		
+		
+		
+		game.PlayGame();
+		
+	}
+	
+	public void PlayGame()
+	{
+		while(GameNotOver)
+		{
+			for(Player eachplayer : thePlayers)
+			{
+				eachplayer.takeTurn(board);
+			}
+		}
 	}
 	
 	public void AddPlayer(Player newPlayer)
@@ -34,20 +48,10 @@ public class Game
 		return 4;
 	}
 	
-	class Tableau
-	{
-		
-	}
 	
-	class AgeDeck extends AbstractDeck
-	{
-		
-	}
 	
 	private Collection<Player> thePlayers;
-	private AgeDeck FirstAge;
-	private AgeDeck SecondAge;
-	private AgeDeck ThirdAge;
-	private AgeDeck FourthAge;
-	private AgeDeck FifthAge;
+	boolean GameNotOver;
+	Tableau board;
 }
+
