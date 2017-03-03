@@ -1,0 +1,1 @@
+Type,FoodCost,WorkCost,SmartCost,CultureCost,HolyCost,FoodGive,WorkGive,SmartGive,CultureGive,HolyGive,FightGive,VP
