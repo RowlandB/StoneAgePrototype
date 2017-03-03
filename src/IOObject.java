@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 //////////////////////////////
@@ -20,6 +24,31 @@ abstract class IO_Object
 	public void Partial_List_Output_String(int which, String Output, boolean b)
 	{
 		Output_String(Integer.toString(which) + ") " + Output);
+	}
+	
+	public String File_Input(String file)
+	{
+		String everything = "";
+		try
+		{
+			BufferedReader br = new BufferedReader(new FileReader(file));
+			    StringBuilder sb = new StringBuilder();
+		    String line = br.readLine();
+
+		    while (line != null) {
+		        sb.append(line);
+		        sb.append(System.lineSeparator());
+		        line = br.readLine();
+		    }
+		    everything = sb.toString();
+		    br.close();
+		   
+		}
+		catch (IOException e)
+		{
+	        e.printStackTrace();
+		}
+		 return everything;
 	}
 }
 

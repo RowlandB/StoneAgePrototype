@@ -1,7 +1,8 @@
+/AIPlayer.class
 /AbstractDeck.class
 /BuildingCard.class
 /Card.class
-/Game$AgeDeck.class
+/Cost.class
 /Game.class
 /HumanPlayer.class
 /IO_Object.class
@@ -12,8 +13,7 @@
 /Player$PlayerDeck.class
 /Player.class
 /System_IO_Object.class
+/Tableau$AgeDeck.class
 /Tableau.class
 /TechnologyCard.class
 /WorkerCard.class
-/AIPlayer.class
-/Tableau$AgeDeck.class

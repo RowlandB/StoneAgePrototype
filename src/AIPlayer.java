@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 
 
 public class AIPlayer extends Player
@@ -6,25 +8,28 @@ public class AIPlayer extends Player
 
 	public AIPlayer()
 	{
-		IO = new System_IO_Object();
 	}
 	
 	@Override
 	public Card chooseCardToBuy(Tableau entireBoard)
 	{
-		Collection<Card> potentials = entireBoard.GetCards();
 		
-		for(Card AllCards: potentials)
+		Collection<Card> allCards = entireBoard.GetCards();
+		
+		ArrayList<Card> cardsToBuy = new ArrayList<Card>();
+		
+		for(Card potentials: allCards)
 		{
-			AllCards.display();
+			if(potentials.purchasable(this))
+			{
+				cardsToBuy.add(potentials);
+			}
 		}
 		
-		IO.Output_Batch();
+		cardsToBuy.add(null);
+		Collections.shuffle(cardsToBuy);
 		
-		
-		return null;
+		return cardsToBuy.get(0);
 	}
 	
-	
-	private IO_Object IO;
 }

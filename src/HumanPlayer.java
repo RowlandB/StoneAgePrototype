@@ -11,7 +11,11 @@ public class HumanPlayer extends Player
 	@Override
 	public Card chooseCardToBuy(Tableau entireBoard)
 	{
+		//TODO display board
 		
+		//TODO display cards
+		
+		//TODO display number of buys
 		
 		//TODO
 		return null;

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class Game
@@ -6,7 +7,8 @@ public class Game
 	public Game()
 	{
 		GameNotOver = true;
-		
+		thePlayers = new ArrayList<Player>();
+		board = new Tableau();
 	}
 	
 	
@@ -14,17 +16,15 @@ public class Game
 	{		
 		Game game = new Game();
 		Integer numPlayers = game.GetNumberOfPlayers();
+		game.AddPlayer(new HumanPlayer());
 		
-		for(int x=0; x<numPlayers; x++)
+		for(int x=0; x<numPlayers-1; x++)
 		{
-			Player newPlayer = new HumanPlayer();
+			Player newPlayer = new AIPlayer();
 			game.AddPlayer(newPlayer);
 		}
 		
-		
-		
-		game.PlayGame();
-		
+		game.PlayGame();	
 	}
 	
 	public void PlayGame()

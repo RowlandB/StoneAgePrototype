@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Collection;
 
 abstract public class Player
@@ -12,12 +13,16 @@ abstract public class Player
 	
 	public void takeTurn(Tableau entireBoard)
 	{
-		playerHand.playAllCards();
+		playerBoard.upkeep();
 		
-		for(int x=0; x<numberOfBuys; x++)
+		playerHand.playAllCards();
+		Card choice = null;
+		
+		choice = chooseCardToBuy(entireBoard);
+		while(choice != null)
 		{
-			Card newCard = chooseCardToBuy(entireBoard);
-			newCard.gainCard(this);
+			choice.gainCard(this);
+			choice = chooseCardToBuy(entireBoard);
 		}
 	}
 	
@@ -33,7 +38,12 @@ abstract public class Player
 		playerBoard.addCardToBoard(theCard);
 	}
 	
-
+	public Cost getResources()
+	{
+		return stuffPlayerHas;
+	}
+	
+	
 	class Board
 	{
 		public void addCardToBoard(Card theCard)
@@ -42,11 +52,23 @@ abstract public class Player
 		}
 		
 		
+		public void upkeep()
+		{
+			// TODO Auto-generated method stub
+			
+		}
+
+
 		private Collection<Card> theBoard;
 	}
 	
 	class HandOfCards
 	{
+		public HandOfCards()
+		{
+			theHand = new ArrayList<Card>();
+		}
+		
 		public void playAllCards()
 		{
 			for(Card EachCard : theHand)
@@ -62,8 +84,19 @@ abstract public class Player
 	{
 		public PlayerDeck()
 		{
-			
+			populateDeck("PlayerDeck.csv");
 		}
+		
+		@Override
+		public Card drawCard()
+		{
+			if(deckIsEmpty())
+			{
+				resetDeck();
+			}
+			
+			return super.drawCard();
+		};
 		
 		public void addCardToDiscard(Card theCard)
 		{
@@ -99,5 +132,10 @@ abstract public class Player
 	private PlayerDeck playerDeck;
 	private HandOfCards playerHand;
 	private Integer numberOfBuys;
+	
+	private Cost stuffPlayerHas;
 
+
+
+	
 }
