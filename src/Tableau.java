@@ -81,6 +81,13 @@ public class Tableau
 		}
 	}
 	
+	public void display()
+	{
+		for(Card theCard : CardsOnTheBoard)
+		{
+			theCard.display();
+		}
+	}
 	class AgeDeck extends AbstractDeck
 	{
 		public AgeDeck(String FileLocation)
@@ -99,5 +106,6 @@ public class Tableau
 	private AgeDeck FourthAge;
 	private AgeDeck FifthAge;
 	private Integer ONE_ROW_SIZE;
+
 	
 }

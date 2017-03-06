@@ -23,10 +23,11 @@ abstract public class AbstractDeck
 	{
 		theCards = new ArrayList<Card>();
 		
-		String FILE_LOCATION = "C:\\Users\\brownr\\Documents\\GitHub\\StoneAgePrototype\\StoneAgePrototype\\";
+		//String FILE_LOCATION = "C:\\Users\\brownr\\Documents\\GitHub\\StoneAgePrototype\\StoneAgePrototype\\";
+		String FILE_LOCATION = "C:\\Users\\Rowland Brown\\workspace\\StoneAgePrototype\\";
+		
 		
 		String everything = IO.File_Input(FILE_LOCATION + FileLocation);
-		//booga_booga = Files.readAllLines(FileSystems.getDefault().getPath(FILE_LOCATION, FileLocation));
 		String[] booga_booga = everything.split("\n");
 		
 		for(String whole_card : booga_booga)
@@ -48,23 +49,24 @@ abstract public class AbstractDeck
 										Integer.parseInt(arg[11]));		//Holy
 			
 			String card_text = arg[12];
-			String name = arg[13];
+			String name = arg[15];
+			Integer VP = Integer.parseInt(arg[13]);//not sure on this one
 			
 			if(Card_Type.equals("Worker"))
 			{
-				blerg = new WorkerCard(actual_cost, given_rec, card_text, name);					
+				blerg = new WorkerCard(actual_cost, given_rec, card_text, name, VP);					
 			}
 			else if(Card_Type.equals("Building"))
 			{
-				blerg = new BuildingCard(actual_cost, given_rec, card_text, name);
+				blerg = new BuildingCard(actual_cost, given_rec, card_text, name, VP);
 			}
 			else if(Card_Type.equals("Technology"))
 			{
-				blerg = new TechnologyCard(actual_cost, given_rec, card_text, name);
+				blerg = new TechnologyCard(actual_cost, given_rec, card_text, name, VP);
 			}
 			else 
 			{
-				blerg = new InterventionCard(actual_cost, given_rec, card_text, name);
+				blerg = new InterventionCard(actual_cost, given_rec, card_text, name, VP);
 			}
 			
 			for(int x=0; x<Integer.parseInt(arg[0]); x++)

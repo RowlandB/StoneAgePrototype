@@ -9,6 +9,7 @@ abstract public class Player
 		playerDeck = new PlayerDeck();
 		playerHand = new HandOfCards();
 		numberOfBuys = 2;
+		stuffPlayerHas = new Cost(0, 0, 0, 0, 0);
 	}
 	
 	public void takeTurn(Tableau entireBoard)
@@ -43,9 +44,18 @@ abstract public class Player
 		return stuffPlayerHas;
 	}
 	
+	public void gainResources(Cost cost) 
+	{
+		stuffPlayerHas.addResources(cost);
+	}
 	
 	class Board
 	{
+		public Board()
+		{
+			theBoard = new ArrayList<Card>();
+		}
+		
 		public void addCardToBoard(Card theCard)
 		{
 			theBoard.add(theCard);
@@ -131,9 +141,11 @@ abstract public class Player
 	private Board playerBoard;
 	private PlayerDeck playerDeck;
 	private HandOfCards playerHand;
-	private Integer numberOfBuys;
+	protected Integer numberOfBuys;
 	
-	private Cost stuffPlayerHas;
+	protected Cost stuffPlayerHas;
+
+	
 
 
 

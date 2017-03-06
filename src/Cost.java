@@ -38,6 +38,16 @@ public class Cost
 		return true;
 	}
 	
+	public void addResources(Cost cost)
+	{
+		// TODO Auto-generated method stub
+		this.Food = this.Food + cost.Food;
+		this.Work = this.Work + cost.Work;
+		this.Smartness = this.Smartness + cost.Smartness;
+		this.Culture = this.Culture + cost.Culture;
+		this.Holiness = this.Holiness + cost.Holiness;		
+	}
+
 	public void display()
 	{
 		
