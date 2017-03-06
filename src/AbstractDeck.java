@@ -23,8 +23,8 @@ abstract public class AbstractDeck
 	{
 		theCards = new ArrayList<Card>();
 		
-		//String FILE_LOCATION = "C:\\Users\\brownr\\Documents\\GitHub\\StoneAgePrototype\\StoneAgePrototype\\";
-		String FILE_LOCATION = "C:\\Users\\Rowland Brown\\workspace\\StoneAgePrototype\\";
+		String FILE_LOCATION = "C:\\Users\\brownr\\Documents\\GitHub\\StoneAgePrototype\\StoneAgePrototype\\";
+		//String FILE_LOCATION = "C:\\Users\\Rowland Brown\\workspace\\StoneAgePrototype\\";
 		
 		
 		String everything = IO.File_Input(FILE_LOCATION + FileLocation);

@@ -9,6 +9,8 @@ public class Tableau
 {
 	Tableau()
 	{
+		IO = new System_IO_Object();
+		
 		CardsOnTheBoard = new ArrayList<Card>();
 		
 		BoardSize = 20;
@@ -83,6 +85,7 @@ public class Tableau
 	
 	public void display()
 	{
+		IO.Output_String("Board");
 		for(Card theCard : CardsOnTheBoard)
 		{
 			theCard.display();
@@ -107,5 +110,6 @@ public class Tableau
 	private AgeDeck FifthAge;
 	private Integer ONE_ROW_SIZE;
 
+	private IO_Object IO;
 	
 }

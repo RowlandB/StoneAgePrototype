@@ -12,6 +12,16 @@ public class Cost
 		Holiness = HolyCost;		
 	}
 	
+	@Override
+	public String toString()
+	{
+		return "Food: " + Food.toString() 
+				+ ", Work: " + Work.toString() 
+				+ ", Smartness: " + Smartness.toString()
+				+ ", Culture: " + Culture.toString()
+				+ ", Holiness: " + Holiness.toString();
+	}
+	
 	public boolean LessThan(Cost other)
 	{
 		if(other.Food < this.Food)
