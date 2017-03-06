@@ -11,16 +11,21 @@ public class HumanPlayer extends Player
 	@Override
 	public Card chooseCardToBuy(Tableau entireBoard)
 	{
-		//display board
-		entireBoard.display();
-		
 		//display cards
+		IO.Output_String("Played Cards:");
 		stuffPlayerHas.display();
 		
 		//display number of buys
+		IO.Output_String("Buys:");
 		IO.Output_String(numberOfBuys.toString());
 		
+		//display board
+		entireBoard.display();
+
 		//TODO
+		String x = IO.Input_String();
+		
+
 		return null;
 	}
 

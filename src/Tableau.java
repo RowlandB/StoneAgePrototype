@@ -85,12 +85,15 @@ public class Tableau
 	
 	public void display()
 	{
-		IO.Output_String("Board");
+		IO.Output_String("Board:");
+		
+//		IO.Output_String(Integer.toString(CardsOnTheBoard.size()));
 		for(Card theCard : CardsOnTheBoard)
 		{
 			theCard.display();
 		}
 	}
+	
 	class AgeDeck extends AbstractDeck
 	{
 		public AgeDeck(String FileLocation)

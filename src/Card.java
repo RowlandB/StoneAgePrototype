@@ -22,7 +22,7 @@ public abstract class Card
 	
 	public void display()
 	{
-		IO.Output_String(CardName);
+		IO.Output_String(CardName + "(" + VP.toString() + ")");
 		IO.Output_String(cost.toString());
 		IO.Output_String(production.toString());
 		IO.Output_String(CardText);
@@ -54,7 +54,7 @@ class WorkerCard extends Card
 	@Override
 	void playCard(Player player)
 	{
-		player.gainResources(cost);
+		player.gainResources(production);
 	}
 
 	@Override

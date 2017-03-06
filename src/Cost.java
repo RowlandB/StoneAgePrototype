@@ -60,7 +60,7 @@ public class Cost
 
 	public void display()
 	{
-		
+		IO.Output_String(this.toString());
 	}
 	
 	private Integer Food;

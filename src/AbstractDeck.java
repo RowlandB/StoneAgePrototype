@@ -49,8 +49,10 @@ abstract public class AbstractDeck
 										Integer.parseInt(arg[11]));		//Holy
 			
 			String card_text = arg[12];
-			String name = arg[15];
-			Integer VP = Integer.parseInt(arg[13]);//not sure on this one
+			String name = arg[14];
+			name = name.substring(0, name.length()-1);
+			
+			Integer VP = Integer.parseInt(arg[13]);
 			
 			if(Card_Type.equals("Worker"))
 			{
@@ -73,10 +75,9 @@ abstract public class AbstractDeck
 			{
 				theCards.add(blerg);
 			}
-			
 		}
 		
-		
+		shuffleDeck();
 	}
 	
 	

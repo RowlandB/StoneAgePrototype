@@ -10,6 +10,8 @@ abstract public class Player
 		playerHand = new HandOfCards();
 		numberOfBuys = 2;
 		stuffPlayerHas = new Cost(0, 0, 0, 0, 0);
+		
+		playerHand.drawHand();
 	}
 	
 	public void takeTurn(Tableau entireBoard)
@@ -25,9 +27,18 @@ abstract public class Player
 			choice.gainCard(this);
 			choice = chooseCardToBuy(entireBoard);
 		}
+		
+		
+		
 	}
 	
-	abstract public Card chooseCardToBuy(Tableau entireBoard);
+	abstract public Card chooseCardToBuy(Tableau entireBoard);	
+	
+	private void drawCard()
+	{
+		Card drawnCard = playerDeck.drawCard();
+		playerHand.addCard(drawnCard);
+	}
 	
 	public void addCardToDiscard(Card theCard)
 	{
@@ -76,7 +87,21 @@ abstract public class Player
 	{
 		public HandOfCards()
 		{
+			handSize = 5;
 			theHand = new ArrayList<Card>();
+		}
+		
+		public void addCard(Card drawnCard)
+		{
+			theHand.add(drawnCard);
+		}
+
+		private void drawHand()
+		{
+			for(int x=0; x<handSize; x++)
+			{
+				Player.this.drawCard();
+			}
 		}
 		
 		public void playAllCards()
@@ -88,6 +113,7 @@ abstract public class Player
 		}
 		
 		private Collection<Card> theHand;
+		private Integer handSize;
 	}
 	
 	class PlayerDeck extends AbstractDeck
@@ -144,10 +170,5 @@ abstract public class Player
 	protected Integer numberOfBuys;
 	
 	protected Cost stuffPlayerHas;
-
-	
-
-
-
 	
 }
