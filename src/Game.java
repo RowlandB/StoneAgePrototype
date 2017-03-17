@@ -34,6 +34,7 @@ public class Game
 			for(Player eachplayer : thePlayers)
 			{
 				eachplayer.takeTurn(board);
+				board.refill();
 			}
 		}
 	}

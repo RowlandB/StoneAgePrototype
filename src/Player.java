@@ -28,8 +28,6 @@ abstract public class Player
 			choice = chooseCardToBuy(entireBoard);
 		}
 		
-		
-		
 	}
 	
 	abstract public Card chooseCardToBuy(Tableau entireBoard);	
@@ -121,6 +119,7 @@ abstract public class Player
 		public PlayerDeck()
 		{
 			populateDeck("PlayerDeck.csv");
+			discard = new DiscardPile();
 		}
 		
 		@Override

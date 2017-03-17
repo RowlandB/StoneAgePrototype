@@ -1,3 +1,13 @@
-30,Worker,2,0,0,0,0,1,0,0,0,0,,0,Stone Age Food Guy
-30,Worker,2,0,0,0,0,0,0,0,0,0,+1 Fight,0,Stone Age Fight Dude
-30,Worker,2,0,0,0,0,0,1,0,0,0,,0,Stone Age Work Dude
+5,Worker,3,0,0,0,0,2,0,0,0,0,,1,Stone Age Food Guy
+5,Worker,2,0,0,0,0,0,0,0,0,0,+1 Fight,1,Stone Age Fight Dude
+5,Worker,2,0,0,0,0,0,1,0,0,0,,1,Stone Age Work Dude
+5,Worker,2,0,0,0,0,0,0,0,0,1,,1,Stone Age Holy Dude
+3,Worker,3,0,0,0,0,0,0,0,1,0,,1,Stone Age Art Dude
+3,Worker,2,0,0,0,0,0,0,1,0,0,,1,Stone Age Tech Dude
+3,Worker,4,0,0,0,0,0,0,0,0,0,+1 Fight; At the beginning of your turn you may discard a Worker from your hand for +1 Fight,1,Fancy Stone Age Fight Dude
+3,Worker,4,0,0,0,0,0,1,0,0,0,,0,Fancy Stone Age Work Dude
+3,Worker,4,0,0,0,0,0,1,0,0,0,At the End of your turn scry 1,0,Fancy Stone Age Holy Dude
+3,Building,0,2,0,0,0,1,0,0,0,0,,0,Stone Age Work Building
+5,Building,0,2,0,0,1,0,0,0,0,0,,0,Stone Age Food Building
+5,Building,0,2,0,0,0,0,0,0,0,1,,0,Stone Age Holy Building
+3,Intervention,0,0,0,0,1,0,0,0,0,0,,10,Stone Age Intervention

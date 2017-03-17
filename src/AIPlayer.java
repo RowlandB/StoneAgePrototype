@@ -14,7 +14,6 @@ public class AIPlayer extends Player
 	@Override
 	public Card chooseCardToBuy(Tableau entireBoard)
 	{
-		
 		Collection<Card> allCards = entireBoard.GetCards();
 		
 		ArrayList<Card> cardsToBuy = new ArrayList<Card>();

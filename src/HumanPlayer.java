@@ -22,11 +22,10 @@ public class HumanPlayer extends Player
 		//display board
 		entireBoard.display();
 
-		//TODO
 		String x = IO.Input_String();
-		
+		Card theCard = entireBoard.purchaseCardByLocation(Integer.parseInt(x));
 
-		return null;
+		return theCard;
 	}
 
 	
