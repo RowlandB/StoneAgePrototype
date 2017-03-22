@@ -25,6 +25,7 @@ abstract public class Player
 		while(choice != null)
 		{
 			choice.gainCard(this);
+			entireBoard.refill();
 			choice = chooseCardToBuy(entireBoard);
 		}
 		
